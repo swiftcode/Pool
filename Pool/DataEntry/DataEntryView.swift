@@ -16,7 +16,16 @@ class DataEntryView: UIView {
         return label
     }()
     
+            
+    var weekNumber: UITextView = {
+        let view = UITextView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Week Number"
+        view.textColor = .systemPink
+        return view
+    }()
         
+    
     var teams: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +37,6 @@ class DataEntryView: UIView {
     //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupView()
         setupLayout()
     }
@@ -39,7 +47,7 @@ class DataEntryView: UIView {
     
     //MARK: - Setup and Layout
     func setupView() {
-        [week, teams].forEach { addSubview($0) }
+        [week, weekNumber, teams].forEach { addSubview($0) }
         backgroundColor = UIColor.systemGray
     }
     
@@ -50,6 +58,10 @@ class DataEntryView: UIView {
             week.heightAnchor.constraint(equalToConstant: 35),
             week.widthAnchor.constraint(equalToConstant: 80),
             
+            weekNumber.bottomAnchor.constraint(equalTo: week.bottomAnchor, constant: 60),
+            weekNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
+            weekNumber.heightAnchor.constraint(equalToConstant: 35),
+            weekNumber.widthAnchor.constraint(equalToConstant: 80),
             
             teams.topAnchor.constraint(equalTo: topAnchor, constant: 80),
             teams.leadingAnchor.constraint(equalTo: week.trailingAnchor, constant: 50),

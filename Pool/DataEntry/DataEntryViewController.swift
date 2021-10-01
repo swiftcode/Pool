@@ -24,7 +24,7 @@ class DataEntryViewController: UIViewController {
     }
     
     func setupLayout() {
-        dataEntryView.frame = view.frame
+        dataEntryView.frame = view.bounds
     }
 
     /*

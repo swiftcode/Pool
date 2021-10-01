@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol NavigateDelegate: class {
+    func navigateTo(viewController: UIViewController)
+}
+
 class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: - TableView
@@ -16,6 +20,8 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
     let moreOptions = ["Data Entry", "Version"]
 
     //MARK: - Properties
+    weak var delegate: NavigateDelegate?
+
     var version: String = {
         let ver: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         return ver
@@ -25,7 +31,6 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
         return buildNumber
     }()
-
 
     //MARK: - Initialization
     override init(frame: CGRect) {
@@ -47,16 +52,13 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.register(MoreCell.self, forCellReuseIdentifier: MoreCell.reusableIdentifier)
         tableView.tableFooterView = UIView()
     }
 
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-
-
-        ])
+        tableView.addConstraint(topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, bottomAnchor: bottomAnchor, paddingTop: 0.0, paddingLeft: 0.0, paddingRight: 0.0, paddingBottom: 0.0, width: 0.0, height: 0.0)
     }
 
     private func setupActions() {
@@ -77,6 +79,11 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
 
         cell.selectionStyle = .none
+        cell.option.text = moreOptions[row]
+
+        if row == 1 {(
+            cell.option.text = "\(moreOptions[row]): \(self.version)  Build \(self.build)")
+        }
 
         return cell
     }
@@ -88,6 +95,17 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
 
+        if row == 0 {
+            let viewController = DataEntryViewController()
+            channelSelected(viewController: viewController)
+        }
+
         print("selected: \(moreOptions[row])")
     }
+
+    //MARK: Delegate methods
+    func channelSelected(viewController: UIViewController) {
+        self.delegate?.navigateTo(viewController: viewController)
+    }
+
 }

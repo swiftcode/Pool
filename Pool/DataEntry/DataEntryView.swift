@@ -12,26 +12,26 @@ class DataEntryView: UIView {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Week"
-        label.textColor = .systemPink
+        label.textColor = .black
         return label
     }()
-    
-            
+
     var weekNumber: UITextField = {
         let view = UITextField(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.placeholder = "Week #"
         view.textColor = .black
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 0.5
         return view
     }()
-        
     
     var teams: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Teams"
-        label.textColor = .red
+        label.textColor = .black
         return label
     }()
     
@@ -49,7 +49,7 @@ class DataEntryView: UIView {
     //MARK: - Setup and Layout
     func setupView() {
         [week, weekNumber, teams].forEach { addSubview($0) }
-        backgroundColor = UIColor.systemGray5
+        backgroundColor = UIColor.systemGray6
     }
     
     func setupLayout() {

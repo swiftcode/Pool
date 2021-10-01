@@ -22,11 +22,11 @@ class TabBarController: UITabBarController {
 
         //MARK: - TabBar item setup
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: homeImage, selectedImage: homeImage)
-        moreViewController.tabBarItem = UITabBarItem(title: "Menu", image: moreImage, selectedImage: moreImage)
+        moreViewController.tabBarItem = UITabBarItem(title: "More", image: moreImage, selectedImage: moreImage)
 
         //MARK: - Navigation
         homeViewController.navigationController?.navigationBar.topItem?.title = "Home"
-        moreViewController.navigationController?.navigationBar.topItem?.title = "Menu"
+        moreViewController.navigationController?.navigationBar.topItem?.title = "More"
 
         //MARK: - Background color
         let backgroundColor = UIColor.white

@@ -18,6 +18,8 @@
 		E5B40D6526F43030003DD41A /* PoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D6426F43030003DD41A /* PoolUITests.swift */; };
 		E5B7855A26F720F9006BA633 /* teams.json in Resources */ = {isa = PBXBuildFile; fileRef = E5B7855926F720F9006BA633 /* teams.json */; };
 		E5B7855D26F72152006BA633 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7855C26F72152006BA633 /* Team.swift */; };
+		E5C03F7927073DE70023E199 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C03F7827073DE70023E199 /* MoreView.swift */; };
+		E5C03F7B27073F000023E199 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C03F7A27073F000023E199 /* MoreCell.swift */; };
 		E5C3B94E2706E870002C1F02 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3B94D2706E870002C1F02 /* TabBarController.swift */; };
 		E5C3B9502706E91A002C1F02 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3B94F2706E91A002C1F02 /* HomeViewController.swift */; };
 		E5C3B9522706E925002C1F02 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3B9512706E925002C1F02 /* MoreViewController.swift */; };
@@ -58,6 +60,8 @@
 		E5B40D6626F43030003DD41A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5B7855926F720F9006BA633 /* teams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teams.json; sourceTree = "<group>"; };
 		E5B7855C26F72152006BA633 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		E5C03F7827073DE70023E199 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		E5C03F7A27073F000023E199 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		E5C3B94D2706E870002C1F02 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E5C3B94F2706E91A002C1F02 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E5C3B9512706E925002C1F02 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		E5B40D4126F4302E003DD41A /* Pool */ = {
 			isa = PBXGroup;
 			children = (
+				E5C03F7727073DAB0023E199 /* More */,
 				E5C3B94C2706E80F002C1F02 /* Navigation */,
 				61D934A227029FD000AD042C /* DataEntry */,
 				E5B7855B26F72140006BA633 /* Models */,
@@ -131,7 +136,6 @@
 				E5B40D5026F43030003DD41A /* Info.plist */,
 				E5B7855826F720F9006BA633 /* Teams */,
 				E5C3B94F2706E91A002C1F02 /* HomeViewController.swift */,
-				E5C3B9512706E925002C1F02 /* MoreViewController.swift */,
 			);
 			path = Pool;
 			sourceTree = "<group>";
@@ -168,6 +172,16 @@
 				E5B7855C26F72152006BA633 /* Team.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E5C03F7727073DAB0023E199 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				E5C3B9512706E925002C1F02 /* MoreViewController.swift */,
+				E5C03F7827073DE70023E199 /* MoreView.swift */,
+				E5C03F7A27073F000023E199 /* MoreCell.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		E5C3B94C2706E80F002C1F02 /* Navigation */ = {
@@ -315,8 +329,10 @@
 				E5C3B9502706E91A002C1F02 /* HomeViewController.swift in Sources */,
 				E5B40D4726F4302E003DD41A /* ViewController.swift in Sources */,
 				E5C3B94E2706E870002C1F02 /* TabBarController.swift in Sources */,
+				E5C03F7B27073F000023E199 /* MoreCell.swift in Sources */,
 				E5B40D4326F4302E003DD41A /* AppDelegate.swift in Sources */,
 				E5B40D4526F4302E003DD41A /* SceneDelegate.swift in Sources */,
+				E5C03F7927073DE70023E199 /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

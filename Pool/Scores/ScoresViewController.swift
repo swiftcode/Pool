@@ -1,5 +1,5 @@
 //
-//  AnalyticsViewController.swift
+//  ScoresViewController.swift
 //  Pool
 //
 //  Created by mpc on 10/1/21.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class AnalyticsViewController: UIViewController {
+class ScoresViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .purple
     }
     
 

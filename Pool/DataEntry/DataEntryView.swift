@@ -13,6 +13,7 @@ class DataEntryView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Week"
         label.textColor = .black
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
         return label
     }()
 
@@ -32,6 +33,7 @@ class DataEntryView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Teams"
         label.textColor = .black
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
         return label
     }()
     
@@ -56,13 +58,12 @@ class DataEntryView: UIView {
         NSLayoutConstraint.activate([
             week.topAnchor.constraint(equalTo: topAnchor, constant: 80),
             week.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
-            week.heightAnchor.constraint(equalToConstant: 35),
             week.widthAnchor.constraint(equalToConstant: 80),
             
-            weekNumber.bottomAnchor.constraint(equalTo: week.bottomAnchor, constant: 60),
+            weekNumber.bottomAnchor.constraint(equalTo: week.bottomAnchor, constant: 50),
             weekNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
-            weekNumber.heightAnchor.constraint(equalToConstant: 35),
-            weekNumber.widthAnchor.constraint(equalToConstant: 80),
+            weekNumber.heightAnchor.constraint(equalToConstant: 40),
+            weekNumber.widthAnchor.constraint(equalToConstant: 90),
             
             teams.topAnchor.constraint(equalTo: topAnchor, constant: 80),
             teams.leadingAnchor.constraint(equalTo: week.trailingAnchor, constant: 50),

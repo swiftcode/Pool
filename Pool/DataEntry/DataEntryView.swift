@@ -16,14 +16,15 @@ class DataEntryView: UIView {
         label.font = UIFont.preferredFont(forTextStyle: .title1)
         return label
     }()
-    
-            
+
     var weekNumber: UITextField = {
         let view = UITextField(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.placeholder = "Week #"
         view.textColor = .black
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 0.5
         return view
     }()
     
@@ -50,7 +51,7 @@ class DataEntryView: UIView {
     //MARK: - Setup and Layout
     func setupView() {
         [week, weekNumber, teams].forEach { addSubview($0) }
-        backgroundColor = UIColor.systemGray5
+        backgroundColor = UIColor.systemGray6
     }
     
     func setupLayout() {

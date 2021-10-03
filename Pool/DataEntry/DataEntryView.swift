@@ -26,7 +26,6 @@ class DataEntryView: UIView {
         view.textColor = .black
         return view
     }()
-        
     
     var teams: UILabel = {
         let label = UILabel(frame: .zero)
@@ -55,6 +54,19 @@ class DataEntryView: UIView {
     }
     
     func setupLayout() {
+        week.addConstraint(
+            topAnchor: topAnchor,
+            leadingAnchor: leadingAnchor,
+            trailingAnchor: 0.0,
+            bottomAnchor: 0.0,
+            padding: 80.0,
+            paddingLeft: 80.0,
+            paddingRight: 0.0,
+            paddingBottom: 0.0,
+            width: 35.0, height: 80.0
+        )
+        
+        
         NSLayoutConstraint.activate([
             week.topAnchor.constraint(equalTo: topAnchor, constant: 80),
             week.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),

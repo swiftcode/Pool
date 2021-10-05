@@ -47,8 +47,8 @@ class TabBarController: UITabBarController {
         view.backgroundColor = .systemGray6
 
         //MARK: - TabBar configuration
-        UITabBar.appearance().backgroundColor = .white
-        UITabBar.appearance().tintColor = .systemRed
-        UITabBar.appearance().unselectedItemTintColor = .black
+        UITabBar.appearance().backgroundColor = UIColor(named: "DeepBlue")
+        UITabBar.appearance().tintColor = .systemYellow
+        UITabBar.appearance().unselectedItemTintColor = .white
     }
 }

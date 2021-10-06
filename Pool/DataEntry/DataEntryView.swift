@@ -54,21 +54,41 @@ class DataEntryView: UIView {
         backgroundColor = UIColor.systemGray6
     }
     
-    func setupLayout() {
-        NSLayoutConstraint.activate([
-            week.topAnchor.constraint(equalTo: topAnchor, constant: 80),
-            week.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
-            week.widthAnchor.constraint(equalToConstant: 80),
-            
-            weekNumber.bottomAnchor.constraint(equalTo: week.bottomAnchor, constant: 50),
-            weekNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
-            weekNumber.heightAnchor.constraint(equalToConstant: 40),
-            weekNumber.widthAnchor.constraint(equalToConstant: 90),
-            
-            teams.topAnchor.constraint(equalTo: topAnchor, constant: 80),
-            teams.leadingAnchor.constraint(equalTo: week.trailingAnchor, constant: 50),
-            teams.heightAnchor.constraint(equalToConstant: 35),
-            teams.widthAnchor.constraint(equalToConstant: 80)
-        ])
+    private func setupLayout() {
+        week.addConstraint(
+            topAnchor: topAnchor,
+            leadingAnchor: leadingAnchor,
+            trailingAnchor: nil,
+            bottomAnchor: nil,
+            paddingTop: 35.0,
+            paddingLeft: 50.0,
+            paddingRight: 0.0,
+            paddingBottom: 0.0,
+            width: 90.0,
+            height: 40.0)
+        
+        weekNumber.addConstraint(
+            topAnchor: topAnchor,
+            leadingAnchor: leadingAnchor,
+            trailingAnchor: nil,
+            bottomAnchor: nil,
+            paddingTop: 80.0,
+            paddingLeft: 50.0,
+            paddingRight: 80.0,
+            paddingBottom: 0.0,
+            width: 80.0,
+            height: 35.0)
+        
+        teams.addConstraint(
+            topAnchor: topAnchor,
+            leadingAnchor: leadingAnchor,
+            trailingAnchor: nil,
+            bottomAnchor: nil,
+            paddingTop: 37.0,
+            paddingLeft: 150.0,
+            paddingRight: 0.0,
+            paddingBottom: 0.0,
+            width: 80.0,
+            height: 35.0)
     }
 }

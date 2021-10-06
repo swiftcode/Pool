@@ -18,7 +18,7 @@ class TabBarController: UITabBarController {
         let moreViewController = UINavigationController(rootViewController: MoreViewController())
 
         //MARK: - TabBar image setup
-        let config = UIImage.SymbolConfiguration(weight: .heavy)
+        let config = UIImage.SymbolConfiguration(weight: .regular)
 
         let homeImage = UIImage(systemName: "house", withConfiguration: config)
         let analyticsImage = UIImage(systemName: "chart.bar.xaxis", withConfiguration: config)

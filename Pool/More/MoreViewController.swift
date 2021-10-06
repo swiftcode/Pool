@@ -25,6 +25,7 @@ class MoreViewController: UIViewController, NavigateDelegate {
     private func setupView() {
         view.addSubview(moreView)
         moreView.delegate = self
+        self.title = "More"
     }
 
     private func setupLayout() {

@@ -20,6 +20,8 @@ class DataEntryViewController: UIViewController {
     //MARK: - Setup and Layout
     func setupView() {
         [dataEntryView].forEach { view.addSubview($0) }
+
+        self.title = "Team Setup"
     }
     
     func setupLayout() {

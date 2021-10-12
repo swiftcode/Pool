@@ -35,7 +35,7 @@
         "div": "South"
     },
     {
-        "city": "Cincinati",
+        "city": "Cincinnati",
         "name": "Bengals",
         "abr": "CIN",
         "conf": "AFC",
@@ -99,7 +99,7 @@
     },
     {
         "city": "Jacksonville",
-        "name": "Jaquars",
+        "name": "Jaguars",
         "abr": "JAX",
         "conf": "AFC",
         "div": "South"
@@ -161,7 +161,7 @@
         "div": "West"
     },
     {
-        "city": "Philidelphia",
+        "city": "Philadelphia",
         "name": "Eagles",
         "abr": "PHI",
         "conf": "NFC",
@@ -211,7 +211,7 @@
     },
     {
         "city": "Tennessee",
-        "name": "Titants",
+        "name": "Titans",
         "abr": "TEN",
         "conf": "AFC",
         "div": "South"

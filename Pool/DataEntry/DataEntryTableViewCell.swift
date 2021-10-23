@@ -16,9 +16,9 @@ class DataEntryTableViewCell: UITableViewCell {
     }()
     
     
-    var weeklyCode: UIView = {
-        
-    }()
+//    var weeklyCode: UIView = {
+//
+//    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()

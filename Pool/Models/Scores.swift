@@ -935,8 +935,8 @@ class JSONAny: Codable {
 }
 
 extension Welcome {
-    func get(url: URL) {
-        guard let url = url else { return }
+    func get(url: String) {
+        guard let url = URL(url) else { return }
         print"url: \(url)"
     }
 }

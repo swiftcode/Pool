@@ -930,6 +930,13 @@ class JSONAny: Codable {
         } else {
             var container = encoder.singleValueContainer()
             try JSONAny.encode(to: &container, value: self.value)
-        }
+        } 
+    }
+}
+
+extension Welcome {
+    func get(url: URL) {
+        guard let url = url else { return }
+        print"url: \(url)"
     }
 }

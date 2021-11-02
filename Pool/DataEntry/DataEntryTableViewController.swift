@@ -10,7 +10,7 @@ import UIKit
 class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Data
-    let dummyNums = ["Week1", "Week2"]
+    let weekNumber = Array(1..<5)
     
     let tableView = UITableView()
 
@@ -29,7 +29,7 @@ class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyNums.count
+        return weekNumber.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

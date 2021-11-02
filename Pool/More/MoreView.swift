@@ -96,7 +96,7 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
 
         if row == 0 {
-            let viewController = DataEntryViewController()
+            let viewController = DataEntryTableViewController()
             channelSelected(viewController: viewController)
         }
 

@@ -56,39 +56,18 @@ class DataEntryView: UIView {
     
     private func setupLayout() {
         week.addConstraint(
-            topAnchor: topAnchor,
-            leadingAnchor: leadingAnchor,
-            trailingAnchor: nil,
-            bottomAnchor: nil,
-            paddingTop: 35.0,
-            paddingLeft: 50.0,
-            paddingRight: 0.0,
-            paddingBottom: 0.0,
-            width: 90.0,
-            height: 40.0)
+            topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: nil, bottomAnchor: nil,
+            paddingTop: 35.0, paddingLeft: 50.0, paddingRight: 0.0, paddingBottom: 0.0,
+            width: 90.0, height: 40.0)
         
         weekNumber.addConstraint(
-            topAnchor: topAnchor,
-            leadingAnchor: leadingAnchor,
-            trailingAnchor: nil,
-            bottomAnchor: nil,
-            paddingTop: 80.0,
-            paddingLeft: 50.0,
-            paddingRight: 80.0,
-            paddingBottom: 0.0,
-            width: 80.0,
-            height: 35.0)
+            topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: nil, bottomAnchor: nil,
+            paddingTop: 80.0, paddingLeft: 50.0, paddingRight: 80.0, paddingBottom: 0.0,
+            width: 80.0, height: 35.0)
         
         teams.addConstraint(
-            topAnchor: topAnchor,
-            leadingAnchor: leadingAnchor,
-            trailingAnchor: nil,
-            bottomAnchor: nil,
-            paddingTop: 37.0,
-            paddingLeft: 150.0,
-            paddingRight: 0.0,
-            paddingBottom: 0.0,
-            width: 80.0,
-            height: 35.0)
+            topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: nil, bottomAnchor: nil,
+            paddingTop: 37.0, paddingLeft: 150.0, paddingRight: 0.0, paddingBottom: 0.0,
+            width: 80.0, height: 35.0)
     }
 }

@@ -13,10 +13,15 @@ class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITab
     let weekNumber = Array(1..<5)
     
     let tableView = UITableView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    func setupView() {
         view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -42,15 +47,4 @@ class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return 60.0
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

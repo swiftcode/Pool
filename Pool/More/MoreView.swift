@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol NavigateDelegate: class {
+protocol NavigateDelegate: AnyObject {
     func navigateTo(viewController: UIViewController)
 }
 

@@ -8,7 +8,8 @@
 import UIKit
 
 class DataEntryTableViewCell: UITableViewCell {
-
+    static var reuseIdentifier = "cell"
+    
     var teamName: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,12 +38,10 @@ class DataEntryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     private func setupView() {
@@ -51,11 +50,13 @@ class DataEntryTableViewCell: UITableViewCell {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            teamName.centerYAnchor.constraint(equalTo: centerYAnchor),
+            teamName.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             teamName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
-            teamName.trailingAnchor.constraint(equalTo: trailingAnchor),
-            teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+            teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            
+            weeklyCode.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            weeklyCode.trailingAnchor.constraint(equalTo: trailingAnchor),
+            weeklyCode.heightAnchor.constraint(equalTo: contentView.heightAnchor),
         ])
     }
-
 }

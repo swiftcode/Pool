@@ -7,35 +7,53 @@
 
 import Foundation
 
-//struct Team: Codable {
-//    let city, name, abr: String
-//    let conf: Conf
-//    let div: Div
-//}
-//
-//enum Conf: String, Codable {
-//    case afc = "AFC"
-//    case nfc = "NFC"
-//}
-//
-//enum Div: String, Codable {
-//      case divEast = "East"
-//    case east = "East"
-//    case north = "North"
-//    case south = "South"
-//    case west = "West"
-//}
-//
-//typealias Teams = [Team]
+
+
+struct TeamInfo: Codable {
+    var dataOpen: [TeamData]
+    
+    enum CodingKeys: String, CodingKey {
+        case dataOpen = "data"
+    }
+
+}
 
 struct TeamData: Codable {
-    let data: [ResultItem]
+    var city: String
+    var name: String
+    var abr: String
+    var conf: String
+    var div: String
+    
+    enum CodingKeys: String, CodingKey {
+        case city = "city"
+        case name = "name"
+        case abr = "abr"
+        case conf = "conf"
+        case div = "div"
+    }
+
 }
 
-struct ResultItem: Codable {
-    let city: String
-    let name: String
-    let abr: String
-    let conf: String
-    let div: String
+func ParseJSON () {
+    guard let path = Bundle.main.path(forResource: "teams", ofType: "json") else {
+        return
+    }
+    let url = URL(fileURLWithPath: path)
+    var result: TeamInfo?
+    do {
+        let jsonData = try Data(contentsOf: url)
+        result = try JSONDecoder().decode(TeamInfo.self, from: jsonData)
+        if let result = result {
+            print(result.dataOpen[1].city)
+        }
+        else {
+            print("Failed to parse")
+        }
+        return
+    }
+    catch {
+        print("Error: \(error)")
+    }
 }
+

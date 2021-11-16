@@ -12,6 +12,19 @@ protocol NavigateDelegate: AnyObject {
 }
 
 class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
+    
+    //MARK: - Properties
+    var weekNumberLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var weekNumber: UITextField = {
+        let view = UITextField(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     //MARK: - TableView
     var tableView = UITableView()
@@ -106,6 +119,15 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
     //MARK: Delegate methods
     func channelSelected(viewController: UIViewController) {
         self.delegate?.navigateTo(viewController: viewController)
+    }
+    
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+            tableView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            option.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            option.trailingAnchor.constraint(equalTo: trailingAnchor),
+            option.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+        ])
     }
 
 }

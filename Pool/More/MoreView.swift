@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol NavigateDelegate: class {
+protocol NavigateDelegate: AnyObject {
     func navigateTo(viewController: UIViewController)
 }
 
@@ -96,7 +96,7 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
 
         if row == 0 {
-            let viewController = DataEntryViewController()
+            let viewController = DataEntryTableViewController()
             channelSelected(viewController: viewController)
         }
 

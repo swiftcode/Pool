@@ -8,7 +8,6 @@
 import UIKit
 
 class DataEntryTableViewCell: UITableViewCell {
-
     static var reusableIdentifier: String = "cell"
 
     var teamName: UILabel = {
@@ -25,12 +24,39 @@ class DataEntryTableViewCell: UITableViewCell {
         return textField
     }()
 
+    //MARK: - Initialization
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setupView()
+        setupLayout()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    private func setupView() {
+        [teamName, weeklyCode].forEach { addSubview($0) }
+    }
+    
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+            teamName.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            teamName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            
+            weeklyCode.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            weeklyCode.trailingAnchor.constraint(equalTo: trailingAnchor),
+            weeklyCode.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+        ])
     }
 }

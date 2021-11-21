@@ -8,7 +8,7 @@
 import UIKit
 
 class DataEntryTableViewCell: UITableViewCell {
-    static var reusableIdentifier: String = "cell"
+    static var reuseIdentifier: String = "cell"
 
     var teamName: UILabel = {
         let label = UILabel(frame: .zero)
@@ -50,12 +50,12 @@ class DataEntryTableViewCell: UITableViewCell {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            teamName.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            teamName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            teamName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            teamName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5.0),
             teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor),
             
-            weeklyCode.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
-            weeklyCode.trailingAnchor.constraint(equalTo: trailingAnchor),
+            weeklyCode.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5.0),
+            weeklyCode.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             weeklyCode.heightAnchor.constraint(equalTo: contentView.heightAnchor),
         ])
     }

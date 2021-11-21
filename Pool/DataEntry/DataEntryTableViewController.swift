@@ -17,6 +17,7 @@ class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupLayout()
     }
 
     func setupView() {
@@ -33,13 +34,12 @@ class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 //weekNumber.count
+        return weekNumber.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DataEntryTableViewCell.reuseIdentifier, for: indexPath) as! DataEntryTableViewCell
-
-        cell.textLabel?.text = "Cell \(indexPath.row + 1)"
+        
         cell.teamName.text = "Test"
         return cell
     }

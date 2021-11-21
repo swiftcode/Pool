@@ -16,7 +16,13 @@ class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+
+    }
+
+    func setupView() {
         view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self

@@ -9,6 +9,8 @@ import UIKit
 
 class DataEntryTableViewCell: UITableViewCell {
 
+    static var reusableIdentifier: String = "cell"
+
     var teamName: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -16,10 +18,13 @@ class DataEntryTableViewCell: UITableViewCell {
     }()
     
     
-    var weeklyCode: UIView = {
-        
+    var weeklyCode: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.placeholder = "Enter week number"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,10 +32,5 @@ class DataEntryTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
-    
-
 }

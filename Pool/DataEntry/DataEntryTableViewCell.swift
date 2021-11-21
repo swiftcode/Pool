@@ -16,14 +16,6 @@ class DataEntryTableViewCell: UITableViewCell {
         return label
     }()
     
-    
-    var weeklyCode: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.placeholder = "Enter week number"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-
     //MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -45,18 +37,14 @@ class DataEntryTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        [teamName, weeklyCode].forEach { addSubview($0) }
+        [teamName].forEach { addSubview($0) }
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
             teamName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             teamName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5.0),
-            teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-            
-            weeklyCode.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5.0),
-            weeklyCode.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            weeklyCode.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+            teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor)
         ])
     }
 }

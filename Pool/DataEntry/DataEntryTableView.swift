@@ -66,11 +66,18 @@ extension DataEntryTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DataEntryTableViewCell.reuseIdentifier, for: indexPath) as! DataEntryTableViewCell
 
         cell.teamName.text = teamNames[indexPath.row]
-        cell.weeklyLetter.text = "A"
+        cell.weeklyLetter.text = randomLetter()
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return 60.0
+    }
+}
+
+extension DataEntryTableView {
+    func randomLetter() -> String {
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456"
+        return String((0..<1).map{ _ in letters.randomElement()! })
     }
 }

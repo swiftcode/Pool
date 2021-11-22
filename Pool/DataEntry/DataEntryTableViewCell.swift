@@ -53,12 +53,12 @@ class DataEntryTableViewCell: UITableViewCell {
     
     private func setupLayout() {
          NSLayoutConstraint.activate([
-            teamName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            teamName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             teamName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5.0),
             teamName.widthAnchor.constraint(equalToConstant: 140.0),
             teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor),
 
-            weeklyLetter.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            weeklyLetter.centerYAnchor.constraint(equalTo: centerYAnchor),
             weeklyLetter.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5.0),
             weeklyLetter.widthAnchor.constraint(equalToConstant: 50.0),
             weeklyLetter.heightAnchor.constraint(equalToConstant: 35.0)

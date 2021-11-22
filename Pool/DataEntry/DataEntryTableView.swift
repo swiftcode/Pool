@@ -66,6 +66,7 @@ extension DataEntryTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DataEntryTableViewCell.reuseIdentifier, for: indexPath) as! DataEntryTableViewCell
 
         cell.teamName.text = teamNames[indexPath.row]
+        cell.weeklyLetter.text = "A"
         return cell
     }
 

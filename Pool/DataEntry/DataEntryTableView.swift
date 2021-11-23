@@ -10,8 +10,28 @@ import UIKit
 class DataEntryTableView: UIView {
 
     //MARK: - Data
-    let weekNumber = Array(1..<5)
+    let weekNumber = Array(1...5)
     let teamNames = ["Cowboys", "Cardinals", "Ravens", "Chiefs", "Eagles"]
+    var week: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Week"
+        label.textColor = .black
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        return label
+    }()
+
+    var currentWeekNumber: UITextField = {
+        let view = UITextField(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.placeholder = "Week #"
+        view.textColor = .black
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 0.5
+        view.textAlignment = .center
+        return view
+    }()
 
     let tableView = UITableView()
 
@@ -30,7 +50,8 @@ class DataEntryTableView: UIView {
 
     //MARK: - Setup and Layout
     private func setupView() {
-        addSubview(tableView)
+        [currentWeekNumber, week, tableView].forEach { addSubview($0) }
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(DataEntryTableViewCell.self, forCellReuseIdentifier: DataEntryTableViewCell.reuseIdentifier)
         tableView.delegate = self
@@ -38,11 +59,18 @@ class DataEntryTableView: UIView {
     }
 
     private func setupLayout() {
+        let guide = safeAreaLayoutGuide
+        
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: topAnchor),
+            currentWeekNumber.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
+            currentWeekNumber.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5.0),
+            currentWeekNumber.heightAnchor.constraint(equalToConstant: 35),
+            currentWeekNumber.widthAnchor.constraint(equalToConstant: 50),
+            
+            tableView.topAnchor.constraint(equalTo: currentWeekNumber.bottomAnchor, constant: 4),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 
@@ -77,7 +105,7 @@ extension DataEntryTableView: UITableViewDataSource {
 
 extension DataEntryTableView {
     func randomLetter() -> String {
-        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456"
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"
         return String((0..<1).map{ _ in letters.randomElement()! })
     }
 }

@@ -46,8 +46,6 @@ class MoreCell: UITableViewCell {
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
-         
-
             option.centerYAnchor.constraint(equalTo: centerYAnchor),
             option.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
             option.trailingAnchor.constraint(equalTo: trailingAnchor),

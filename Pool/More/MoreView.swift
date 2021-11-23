@@ -70,9 +70,9 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.tableFooterView = UIView()
     }
 
-    private func setupLayout() {
-        tableView.addConstraint(topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, bottomAnchor: bottomAnchor, paddingTop: 0.0, paddingLeft: 0.0, paddingRight: 0.0, paddingBottom: 0.0, width: 0.0, height: 0.0)
-    }
+//    private func setupLayout() {
+//        tableView.addConstraint(topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, bottomAnchor: bottomAnchor, paddingTop: 0.0, paddingLeft: 0.0, paddingRight: 0.0, paddingBottom: 0.0, width: 0.0, height: 0.0)
+//    }
 
     private func setupActions() {
 
@@ -124,9 +124,9 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
     private func setupLayout() {
         NSLayoutConstraint.activate([
             tableView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            option.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
-            option.trailingAnchor.constraint(equalTo: trailingAnchor),
-            option.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.heightAnchor.constraint(equalTo: heightAnchor)
         ])
     }
 

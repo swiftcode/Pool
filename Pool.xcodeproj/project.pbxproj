@@ -32,6 +32,7 @@
 		E5C3B9502706E91A002C1F02 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3B94F2706E91A002C1F02 /* HomeViewController.swift */; };
 		E5C3B9522706E925002C1F02 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C3B9512706E925002C1F02 /* MoreViewController.swift */; };
 		E5C56BFB270CFE0A000F7744 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C56BFA270CFE0A000F7744 /* Colors.xcassets */; };
+		E5DE8BB1274AC326000FE576 /* DataEntryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE8BB0274AC326000FE576 /* DataEntryTableView.swift */; };
 		E5E7DC1E270DC48F008A8DC4 /* NavigationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7DC1D270DC48F008A8DC4 /* NavigationLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		E5C3B94F2706E91A002C1F02 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E5C3B9512706E925002C1F02 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		E5C56BFA270CFE0A000F7744 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E5DE8BB0274AC326000FE576 /* DataEntryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryTableView.swift; sourceTree = "<group>"; };
 		E5E7DC1D270DC48F008A8DC4 /* NavigationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				61D934A32702A06C00AD042C /* DataEntryViewController.swift */,
 				61D934A52702A08E00AD042C /* DataEntryView.swift */,
 				6156C0AE271E4A71005FFABE /* DataEntryTableViewController.swift */,
+				E5DE8BB0274AC326000FE576 /* DataEntryTableView.swift */,
 				6156C0B0271E4AB8005FFABE /* DataEntryTableViewCell.swift */,
 			);
 			path = DataEntry;
@@ -402,6 +405,7 @@
 				61D934A42702A06C00AD042C /* DataEntryViewController.swift in Sources */,
 				E5C03F7E2707435D0023E199 /* UIView.swift in Sources */,
 				E5C3B9502706E91A002C1F02 /* HomeViewController.swift in Sources */,
+				E5DE8BB1274AC326000FE576 /* DataEntryTableView.swift in Sources */,
 				E5C03F8027074D970023E199 /* AnalyticsViewController.swift in Sources */,
 				E5B40D4726F4302E003DD41A /* ViewController.swift in Sources */,
 				E5C3B94E2706E870002C1F02 /* TabBarController.swift in Sources */,

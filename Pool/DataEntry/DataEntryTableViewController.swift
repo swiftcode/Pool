@@ -7,13 +7,14 @@
 
 import UIKit
 
-class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    //MARK: - Data
-    let weekNumber = Array(1..<5)
-    
-    let tableView = UITableView()
-    
+class DataEntryTableViewController: UIViewController {
+
+    var dataEntryTableView: DataEntryTableView = {
+        let view = DataEntryTableView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -21,40 +22,15 @@ class DataEntryTableViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func setupView() {
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(DataEntryTableViewCell.self, forCellReuseIdentifier: DataEntryTableViewCell.reuseIdentifier)
-        tableView.delegate = self
-        tableView.dataSource = self
+        view.addSubview(dataEntryTableView)
     }
 
-    // MARK: - Table view data source
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 //weekNumber.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DataEntryTableViewCell.reuseIdentifier, for: indexPath) as! DataEntryTableViewCell
-
-        cell.textLabel?.text = "Cell \(indexPath.row + 1)"
-        cell.teamName.text = "Test"
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           return 60.0
-    }
-    
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            dataEntryTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            dataEntryTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dataEntryTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dataEntryTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }

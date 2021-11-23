@@ -13,7 +13,7 @@ class DataEntryView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Week"
         label.textColor = .black
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
         return label
     }()
 
@@ -26,15 +26,6 @@ class DataEntryView: UIView {
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 0.5
         return view
-    }()
-    
-    var teams: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Teams"
-        label.textColor = .black
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
-        return label
     }()
     
     //MARK: - Init
@@ -50,24 +41,23 @@ class DataEntryView: UIView {
     
     //MARK: - Setup and Layout
     func setupView() {
-        [week, weekNumber, teams].forEach { addSubview($0) }
+        [week, weekNumber].forEach { addSubview($0) }
         backgroundColor = UIColor.systemGray6
     }
     
     private func setupLayout() {
-        week.addConstraint(
-            topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: nil, bottomAnchor: nil,
-            paddingTop: 35.0, paddingLeft: 50.0, paddingRight: 0.0, paddingBottom: 0.0,
-            width: 90.0, height: 40.0)
-        
-        weekNumber.addConstraint(
-            topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: nil, bottomAnchor: nil,
-            paddingTop: 80.0, paddingLeft: 50.0, paddingRight: 80.0, paddingBottom: 0.0,
-            width: 80.0, height: 35.0)
-        
-        teams.addConstraint(
-            topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: nil, bottomAnchor: nil,
-            paddingTop: 37.0, paddingLeft: 150.0, paddingRight: 0.0, paddingBottom: 0.0,
-            width: 80.0, height: 35.0)
+        let guide = safeAreaLayoutGuide
+
+        NSLayoutConstraint.activate([
+            week.topAnchor.constraint(equalTo: guide.topAnchor, constant: 15.0),
+            week.leadingAnchor.constraint(equalTo: guide.centerXAnchor),
+            week.widthAnchor.constraint(equalToConstant: 90.0),
+            week.heightAnchor.constraint(equalToConstant: 40.0),
+
+            weekNumber.topAnchor.constraint(equalTo: week.topAnchor),
+            weekNumber.leadingAnchor.constraint(equalTo: week.trailingAnchor, constant: 2.0),
+            weekNumber.widthAnchor.constraint(equalToConstant: 90.0),
+            weekNumber.heightAnchor.constraint(equalToConstant: 40.0)
+        ])
     }
 }

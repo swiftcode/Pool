@@ -8,19 +8,22 @@
 import UIKit
 
 class DataEntryTableViewCell: UITableViewCell {
-    static var reuseIdentifier = "cell"
-    
+    static var reuseIdentifier: String = "cell"
+
     var teamName: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    
-    var weeklyCode: UITextField = {
+
+    var weeklyLetter: UITextField = {
         let textField = UITextField(frame: .zero)
-        textField.placeholder = "Enter week number"
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = .systemOrange
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.layer.borderWidth = 0.7
+        textField.textAlignment = .center
+        textField.allowsEditingTextAttributes = true
         return textField
     }()
     
@@ -45,18 +48,20 @@ class DataEntryTableViewCell: UITableViewCell {
     }
     
     private func setupView() {
-        [teamName, weeklyCode].forEach { addSubview($0) }
+        [teamName, weeklyLetter].forEach { addSubview($0) }
     }
     
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-            teamName.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            teamName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+         NSLayoutConstraint.activate([
+            teamName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            teamName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5.0),
+            teamName.widthAnchor.constraint(equalToConstant: 140.0),
             teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-            
-            weeklyCode.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
-            weeklyCode.trailingAnchor.constraint(equalTo: trailingAnchor),
-            weeklyCode.heightAnchor.constraint(equalTo: contentView.heightAnchor),
+
+            weeklyLetter.centerYAnchor.constraint(equalTo: centerYAnchor),
+            weeklyLetter.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5.0),
+            weeklyLetter.widthAnchor.constraint(equalToConstant: 50.0),
+            weeklyLetter.heightAnchor.constraint(equalToConstant: 35.0)
         ])
     }
 }

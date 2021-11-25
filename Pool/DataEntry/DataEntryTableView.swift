@@ -12,6 +12,7 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
     //MARK: - Data
     let weekNumber = Array(1...5)
     let teamNames = ["Cowboys", "Cardinals", "Ravens", "Chiefs", "Eagles"]
+    var currentLetter: String = ""
 
     var week: UILabel = {
         let label = UILabel(frame: .zero)
@@ -70,7 +71,7 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
             week.heightAnchor.constraint(equalToConstant: 35.0),
 
             currentWeekNumber.topAnchor.constraint(equalTo: week.topAnchor),
-            currentWeekNumber.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4.0),
+            currentWeekNumber.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5.0),
             currentWeekNumber.heightAnchor.constraint(equalToConstant: 35.0),
             currentWeekNumber.widthAnchor.constraint(equalToConstant: 50.0),
             
@@ -124,11 +125,17 @@ extension DataEntryTableView {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-
+        self.currentLetter = textField.text ?? ""
+        textField.text = ""
     }
 
-    func textFieldDidEndEditing(textField: UITextField) {
-        guard let text = textField.text else { return }
-        print("textField: \(text)")
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return true }
+
+        if text.isEmpty {
+            textField.text = currentLetter
+        }
+
+        return true
     }
 }

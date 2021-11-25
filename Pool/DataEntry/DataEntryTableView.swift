@@ -124,7 +124,7 @@ extension DataEntryTableView {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("begin editing: \(textField.text!)")
+
     }
 
     func textFieldDidEndEditing(textField: UITextField) {

@@ -51,7 +51,6 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
 
         setupView()
         setupLayout()
-        setupActions()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -68,14 +67,6 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.separatorStyle = .singleLine
         tableView.register(MoreCell.self, forCellReuseIdentifier: MoreCell.reusableIdentifier)
         tableView.tableFooterView = UIView()
-    }
-
-//    private func setupLayout() {
-//        tableView.addConstraint(topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, bottomAnchor: bottomAnchor, paddingTop: 0.0, paddingLeft: 0.0, paddingRight: 0.0, paddingBottom: 0.0, width: 0.0, height: 0.0)
-//    }
-
-    private func setupActions() {
-
     }
 
     //MARK: - TableView Delegates
@@ -112,8 +103,6 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
             let viewController = DataEntryTableViewController()
             channelSelected(viewController: viewController)
         }
-
-        print("selected: \(moreOptions[row])")
     }
 
     //MARK: Delegate methods

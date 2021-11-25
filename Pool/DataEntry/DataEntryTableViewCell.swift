@@ -19,7 +19,6 @@ class DataEntryTableViewCell: UITableViewCell {
     var weeklyLetter: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .systemOrange
         textField.layer.borderColor = UIColor.black.cgColor
         textField.layer.borderWidth = 0.7
         textField.textAlignment = .center
@@ -33,6 +32,7 @@ class DataEntryTableViewCell: UITableViewCell {
 
         setupView()
         setupLayout()
+        setupActions()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -63,5 +63,15 @@ class DataEntryTableViewCell: UITableViewCell {
             weeklyLetter.widthAnchor.constraint(equalToConstant: 50.0),
             weeklyLetter.heightAnchor.constraint(equalToConstant: 35.0)
         ])
+    }
+
+    private func setupActions() {
+        print("setting up actions")
+        weeklyLetter.addTarget(self, action: #selector(toggleEditing(textField:)), for: .touchUpInside)
+    }
+
+    @objc func toggleEditing(textField: UITextField) {
+        print("toggleEditing: \(textField.text)")
+        textField.becomeFirstResponder()
     }
 }

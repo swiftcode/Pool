@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataEntryTableView: UIView {
+class DataEntryTableView: UIView, UITextFieldDelegate {
 
     //MARK: - Data
     let weekNumber = Array(1...5)
@@ -64,7 +64,7 @@ class DataEntryTableView: UIView {
         let guide = safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
-            week.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5.0),
+            week.topAnchor.constraint(equalTo: guide.topAnchor),
             week.trailingAnchor.constraint(equalTo: currentWeekNumber.leadingAnchor, constant: -8.0),
             week.widthAnchor.constraint(equalToConstant: 80.0),
             week.heightAnchor.constraint(equalToConstant: 35.0),
@@ -82,7 +82,7 @@ class DataEntryTableView: UIView {
     }
 
     private func setupActions() {
-
+        
     }
 }
 
@@ -100,6 +100,7 @@ extension DataEntryTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DataEntryTableViewCell.reuseIdentifier, for: indexPath) as! DataEntryTableViewCell
 
+        cell.weeklyLetter.delegate = self
         cell.teamName.text = teamNames[indexPath.row]
         cell.weeklyLetter.text = randomLetter()
         return cell
@@ -108,11 +109,26 @@ extension DataEntryTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
            return 60.0
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = self.tableView.cellForRow(at: indexPath) as? DataEntryTableViewCell {
+            cell.weeklyLetter.becomeFirstResponder()
+        }
+    }
 }
 
 extension DataEntryTableView {
     func randomLetter() -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"
         return String((0..<1).map{ _ in letters.randomElement()! })
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("begin editing: \(textField.text!)")
+    }
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        guard let text = textField.text else { return }
+        print("textField: \(text)")
     }
 }

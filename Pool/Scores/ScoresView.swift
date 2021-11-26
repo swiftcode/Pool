@@ -9,13 +9,9 @@ import UIKit
 
 class ScoresView: UIView {
 
-    var welcome = Welcome()
-  
     //MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        welcome.get("https://google.com")
    }
     
     required init?(coder aDecoder: NSCoder) {

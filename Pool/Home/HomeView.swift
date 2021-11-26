@@ -9,12 +9,31 @@ import UIKit
 
 class HomeView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    var homeImage: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        view.image = UIImage(named: "sports2.jpg")
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
 
+    //MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+        setupLayout()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    //MARK: - Setup and Layout
+    func setupView() {
+        backgroundColor = UIColor.systemGray6
+        addSubview(homeImage)
+    }
+
+    private func setupLayout() {
+        homeImage.addConstraint(topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, bottomAnchor: bottomAnchor, paddingTop: 0.0, paddingLeft: 0.0, paddingRight: 0.0, paddingBottom: 0.0, width: 0.0, height: 0.0)
+    }
 }

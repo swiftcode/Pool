@@ -11,6 +11,8 @@
 		6156C0B1271E4AB9005FFABE /* DataEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6156C0B0271E4AB8005FFABE /* DataEntryTableViewCell.swift */; };
 		61D934A42702A06C00AD042C /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D934A32702A06C00AD042C /* DataEntryViewController.swift */; };
 		61D934A62702A08E00AD042C /* DataEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D934A52702A08E00AD042C /* DataEntryView.swift */; };
+		E50F155F2750B970005D1774 /* sports.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E50F155E2750B970005D1774 /* sports.jpg */; };
+		E50F15612750B976005D1774 /* sports2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E50F15602750B976005D1774 /* sports2.jpg */; };
 		E5B40D4326F4302E003DD41A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D4226F4302E003DD41A /* AppDelegate.swift */; };
 		E5B40D4526F4302E003DD41A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D4426F4302E003DD41A /* SceneDelegate.swift */; };
 		E5B40D4726F4302E003DD41A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D4626F4302E003DD41A /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		6156C0B0271E4AB8005FFABE /* DataEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryTableViewCell.swift; sourceTree = "<group>"; };
 		61D934A32702A06C00AD042C /* DataEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		61D934A52702A08E00AD042C /* DataEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryView.swift; sourceTree = "<group>"; };
+		E50F155E2750B970005D1774 /* sports.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sports.jpg; sourceTree = "<group>"; };
+		E50F15602750B976005D1774 /* sports2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sports2.jpg; sourceTree = "<group>"; };
 		E5B40D3F26F4302E003DD41A /* Pool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B40D4226F4302E003DD41A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B40D4426F4302E003DD41A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				E5B40D4B26F43030003DD41A /* Assets.xcassets */,
 				E5C56BFA270CFE0A000F7744 /* Colors.xcassets */,
 				E5B40D4D26F43030003DD41A /* LaunchScreen.storyboard */,
+				E50F155E2750B970005D1774 /* sports.jpg */,
+				E50F15602750B976005D1774 /* sports2.jpg */,
 				E5B40D5026F43030003DD41A /* Info.plist */,
 				E5B7855826F720F9006BA633 /* Teams */,
 			);
@@ -372,6 +378,8 @@
 				E5C56BFB270CFE0A000F7744 /* Colors.xcassets in Resources */,
 				E5B40D4F26F43030003DD41A /* LaunchScreen.storyboard in Resources */,
 				E5B40D4C26F43030003DD41A /* Assets.xcassets in Resources */,
+				E50F155F2750B970005D1774 /* sports.jpg in Resources */,
+				E50F15612750B976005D1774 /* sports2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

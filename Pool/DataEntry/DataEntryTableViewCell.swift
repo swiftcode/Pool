@@ -66,12 +66,10 @@ class DataEntryTableViewCell: UITableViewCell {
     }
 
     private func setupActions() {
-        print("setting up actions")
         weeklyLetter.addTarget(self, action: #selector(toggleEditing(textField:)), for: .touchUpInside)
     }
 
     @objc func toggleEditing(textField: UITextField) {
-        print("toggleEditing: \(textField.text)")
         textField.becomeFirstResponder()
     }
 }

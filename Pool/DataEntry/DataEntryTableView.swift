@@ -123,7 +123,9 @@ extension DataEntryTableView {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"
         return String((0..<1).map{ _ in letters.randomElement()! })
     }
+}
 
+extension DataEntryTableView {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.currentLetter = textField.text ?? ""
         textField.text = ""

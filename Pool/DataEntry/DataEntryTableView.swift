@@ -49,6 +49,7 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
 
         getTeams { (completion) in
             print("teams fetched: \(self.teams.count)")
+            self.teams = self.teams.sorted(by: { $0.name < $1.name })
         }
 
         setupView()

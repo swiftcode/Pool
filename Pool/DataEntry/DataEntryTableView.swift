@@ -7,11 +7,16 @@
 
 import UIKit
 
+typealias dict = [String : Any?]
+
 class DataEntryTableView: UIView, UITextFieldDelegate {
+
+    //MARK: - Completion Handler
+    typealias completion = (Bool) -> ()
 
     //MARK: - Data
     let weekNumber = Array(1...5)
-    let teamNames = ["Cowboys", "Cardinals", "Ravens", "Chiefs", "Eagles"]
+    var teams: [Team] = []
     var currentLetter: String = ""
 
     var week: UILabel = {
@@ -36,11 +41,15 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
         return view
     }()
 
-    let tableView = UITableView()
+    lazy var tableView = UITableView()
 
     //MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        getTeams { (completion) in
+            print("teams fetched: \(self.teams.count)")
+        }
 
         setupView()
         setupLayout()
@@ -95,14 +104,14 @@ extension DataEntryTableView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weekNumber.count
+        return teams.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DataEntryTableViewCell.reuseIdentifier, for: indexPath) as! DataEntryTableViewCell
 
         cell.weeklyLetter.delegate = self
-        cell.teamName.text = teamNames[indexPath.row]
+        cell.teamName.text = teams[indexPath.row].name
         cell.weeklyLetter.text = randomLetter()
         return cell
     }
@@ -139,5 +148,22 @@ extension DataEntryTableView {
         }
 
         return true
+    }
+}
+
+extension DataEntryTableView {
+    func getTeams(completion: @escaping completion) {
+        if let url = Bundle.main.url(forResource: "teams", withExtension: "json") {
+             do {
+                 let data = try Data(contentsOf: url)
+                 let decoder = JSONDecoder()
+                 let teams = try decoder.decode([Team].self, from: data)
+                 self.teams = teams
+                 completion(true)
+             } catch {
+                 print("error:\(error)")
+                 completion(false)
+             }
+         }
     }
 }

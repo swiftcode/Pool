@@ -19,7 +19,7 @@ class DataEntryTableViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupLayout()
-        addNavigationButton()
+        addSaveButton()
     }
 
     func setupView() {
@@ -35,11 +35,11 @@ class DataEntryTableViewController: UIViewController {
         ])
     }
 
-    private func addNavigationButton() {
+    private func addSaveButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveTapped))
     }
 
     @objc func saveTapped() {
-        print("saveTapped")
+        dataEntryTableView.saveButtonTapped()
     }
 }

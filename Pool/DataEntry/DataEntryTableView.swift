@@ -53,7 +53,6 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
 
         setupView()
         setupLayout()
-        setupActions()
     }
 
     required init?(coder aDecoder: NSCoder) {

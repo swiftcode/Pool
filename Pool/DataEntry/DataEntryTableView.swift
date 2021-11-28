@@ -41,14 +41,14 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
         return view
     }()
 
-    lazy var tableView = UITableView()
+    var tableView = UITableView()
 
     //MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         getTeams { (completion) in
-            print("teams fetched: \(self.teams.count)")
+            self.teams = self.teams.sorted(by: { $0.name < $1.name })
         }
 
         setupView()
@@ -89,10 +89,6 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
-    }
-
-    private func setupActions() {
-        
     }
 }
 
@@ -154,16 +150,16 @@ extension DataEntryTableView {
 extension DataEntryTableView {
     func getTeams(completion: @escaping completion) {
         if let url = Bundle.main.url(forResource: "teams", withExtension: "json") {
-             do {
-                 let data = try Data(contentsOf: url)
-                 let decoder = JSONDecoder()
-                 let teams = try decoder.decode([Team].self, from: data)
-                 self.teams = teams
-                 completion(true)
-             } catch {
-                 print("error:\(error)")
-                 completion(false)
-             }
-         }
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let teams = try decoder.decode([Team].self, from: data)
+                self.teams = teams
+                completion(true)
+            } catch {
+                print("error:\(error)")
+                completion(false)
+            }
+        }
     }
 }

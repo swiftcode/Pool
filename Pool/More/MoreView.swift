@@ -7,11 +7,24 @@
 
 import UIKit
 
-protocol NavigateDelegate: class {
+protocol NavigateDelegate: AnyObject {
     func navigateTo(viewController: UIViewController)
 }
 
 class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
+    
+    //MARK: - Properties
+    var weekNumberLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var weekNumber: UITextField = {
+        let view = UITextField(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     //MARK: - TableView
     var tableView = UITableView()
@@ -38,7 +51,6 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
 
         setupView()
         setupLayout()
-        setupActions()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -55,14 +67,6 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.separatorStyle = .singleLine
         tableView.register(MoreCell.self, forCellReuseIdentifier: MoreCell.reusableIdentifier)
         tableView.tableFooterView = UIView()
-    }
-
-    private func setupLayout() {
-        tableView.addConstraint(topAnchor: topAnchor, leadingAnchor: leadingAnchor, trailingAnchor: trailingAnchor, bottomAnchor: bottomAnchor, paddingTop: 0.0, paddingLeft: 0.0, paddingRight: 0.0, paddingBottom: 0.0, width: 0.0, height: 0.0)
-    }
-
-    private func setupActions() {
-
     }
 
     //MARK: - TableView Delegates
@@ -96,16 +100,23 @@ class MoreView: UIView, UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
 
         if row == 0 {
-            let viewController = DataEntryViewController()
+            let viewController = DataEntryTableViewController()
             channelSelected(viewController: viewController)
         }
-
-        print("selected: \(moreOptions[row])")
     }
 
     //MARK: Delegate methods
     func channelSelected(viewController: UIViewController) {
         self.delegate?.navigateTo(viewController: viewController)
+    }
+    
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+            tableView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.heightAnchor.constraint(equalTo: heightAnchor)
+        ])
     }
 
 }

@@ -54,7 +54,7 @@ class DataEntryTableViewCell: UITableViewCell {
     private func setupLayout() {
          NSLayoutConstraint.activate([
             teamName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            teamName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5.0),
+            teamName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
             teamName.widthAnchor.constraint(equalToConstant: 140.0),
             teamName.heightAnchor.constraint(equalTo: contentView.heightAnchor),
 

@@ -89,6 +89,11 @@ class DataEntryTableView: UIView, UITextFieldDelegate {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
+
+    func saveButtonTapped() {
+        //Serialize data to JSON file
+        print("DataEntryTableView.saveButtonTapped()")
+    }
 }
 
 extension DataEntryTableView: UITableViewDelegate { }

@@ -9,7 +9,7 @@ import UIKit
 
 class ScoresView: UIView {
 
-    //MARK: - Initialization
+  //MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
    }
@@ -17,6 +17,4 @@ class ScoresView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-   
-
 }

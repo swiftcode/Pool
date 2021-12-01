@@ -15,6 +15,7 @@ class DataEntryViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupLayout()
+        
     }
     
     //MARK: - Setup and Layout
@@ -27,4 +28,6 @@ class DataEntryViewController: UIViewController {
     func setupLayout() {
         dataEntryView.addConstraint(topAnchor: view.topAnchor, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, bottomAnchor: view.bottomAnchor, paddingTop: 70.0, paddingLeft: 0.0, paddingRight: 0.0, paddingBottom: 0.0, width: 0.0, height: 0.0)
     }
+    
+    
 }

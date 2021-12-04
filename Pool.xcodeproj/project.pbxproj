@@ -13,6 +13,8 @@
 		61D934A62702A08E00AD042C /* DataEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D934A52702A08E00AD042C /* DataEntryView.swift */; };
 		E50F155F2750B970005D1774 /* sports.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E50F155E2750B970005D1774 /* sports.jpg */; };
 		E50F15612750B976005D1774 /* sports2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E50F15602750B976005D1774 /* sports2.jpg */; };
+		E557A56F275B505E007644FD /* WeeklyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557A56E275B505E007644FD /* WeeklyCard.swift */; };
+		E557A571275B580D007644FD /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557A570275B580D007644FD /* Team.swift */; };
 		E5B40D4326F4302E003DD41A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D4226F4302E003DD41A /* AppDelegate.swift */; };
 		E5B40D4526F4302E003DD41A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D4426F4302E003DD41A /* SceneDelegate.swift */; };
 		E5B40D4726F4302E003DD41A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D4626F4302E003DD41A /* ViewController.swift */; };
@@ -21,7 +23,7 @@
 		E5B40D5A26F43030003DD41A /* PoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D5926F43030003DD41A /* PoolTests.swift */; };
 		E5B40D6526F43030003DD41A /* PoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B40D6426F43030003DD41A /* PoolUITests.swift */; };
 		E5B7855A26F720F9006BA633 /* teams.json in Resources */ = {isa = PBXBuildFile; fileRef = E5B7855926F720F9006BA633 /* teams.json */; };
-		E5B7855D26F72152006BA633 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7855C26F72152006BA633 /* Team.swift */; };
+		E5B7855D26F72152006BA633 /* TeamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7855C26F72152006BA633 /* TeamInfo.swift */; };
 		E5C03F7927073DE70023E199 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C03F7827073DE70023E199 /* MoreView.swift */; };
 		E5C03F7B27073F000023E199 /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C03F7A27073F000023E199 /* MoreCell.swift */; };
 		E5C03F7E2707435D0023E199 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C03F7D2707435D0023E199 /* UIView.swift */; };
@@ -62,6 +64,8 @@
 		61D934A52702A08E00AD042C /* DataEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryView.swift; sourceTree = "<group>"; };
 		E50F155E2750B970005D1774 /* sports.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sports.jpg; sourceTree = "<group>"; };
 		E50F15602750B976005D1774 /* sports2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sports2.jpg; sourceTree = "<group>"; };
+		E557A56E275B505E007644FD /* WeeklyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCard.swift; sourceTree = "<group>"; };
+		E557A570275B580D007644FD /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		E5B40D3F26F4302E003DD41A /* Pool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B40D4226F4302E003DD41A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B40D4426F4302E003DD41A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +80,7 @@
 		E5B40D6426F43030003DD41A /* PoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolUITests.swift; sourceTree = "<group>"; };
 		E5B40D6626F43030003DD41A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5B7855926F720F9006BA633 /* teams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teams.json; sourceTree = "<group>"; };
-		E5B7855C26F72152006BA633 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		E5B7855C26F72152006BA633 /* TeamInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfo.swift; sourceTree = "<group>"; };
 		E5C03F7827073DE70023E199 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		E5C03F7A27073F000023E199 /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		E5C03F7D2707435D0023E199 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -205,7 +209,9 @@
 		E5B7855B26F72140006BA633 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E5B7855C26F72152006BA633 /* Team.swift */,
+				E557A570275B580D007644FD /* Team.swift */,
+				E5B7855C26F72152006BA633 /* TeamInfo.swift */,
+				E557A56E275B505E007644FD /* WeeklyCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,13 +413,14 @@
 				E5C3B9522706E925002C1F02 /* MoreViewController.swift in Sources */,
 				6156C0AF271E4A71005FFABE /* DataEntryTableViewController.swift in Sources */,
 				E5C03F892707511A0023E199 /* AnalyticsView.swift in Sources */,
-				E5B7855D26F72152006BA633 /* Team.swift in Sources */,
+				E5B7855D26F72152006BA633 /* TeamInfo.swift in Sources */,
 				61D934A62702A08E00AD042C /* DataEntryView.swift in Sources */,
 				E5C03F872707510B0023E199 /* HomeView.swift in Sources */,
 				61D934A42702A06C00AD042C /* DataEntryViewController.swift in Sources */,
 				E5C03F7E2707435D0023E199 /* UIView.swift in Sources */,
 				E5C3B9502706E91A002C1F02 /* HomeViewController.swift in Sources */,
 				E5DE8BB1274AC326000FE576 /* DataEntryTableView.swift in Sources */,
+				E557A56F275B505E007644FD /* WeeklyCard.swift in Sources */,
 				E5C03F8027074D970023E199 /* AnalyticsViewController.swift in Sources */,
 				E5B40D4726F4302E003DD41A /* ViewController.swift in Sources */,
 				E5C3B94E2706E870002C1F02 /* TabBarController.swift in Sources */,
@@ -422,6 +429,7 @@
 				6156C0B1271E4AB9005FFABE /* DataEntryTableViewCell.swift in Sources */,
 				E5C03F7B27073F000023E199 /* MoreCell.swift in Sources */,
 				E5B40D4326F4302E003DD41A /* AppDelegate.swift in Sources */,
+				E557A571275B580D007644FD /* Team.swift in Sources */,
 				E5B40D4526F4302E003DD41A /* SceneDelegate.swift in Sources */,
 				E5C03F8B270751540023E199 /* ScoresView.swift in Sources */,
 				E5C03F7927073DE70023E199 /* MoreView.swift in Sources */,

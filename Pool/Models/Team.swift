@@ -2,58 +2,29 @@
 //  Team.swift
 //  Pool
 //
-//  Created by mpc on 9/19/21.
+//  Created by mpc on 12/4/21.
 //
 
 import Foundation
 
 
-
-struct TeamInfo: Codable {
-    var dataOpen: [TeamData]
-    
-    enum CodingKeys: String, CodingKey {
-        case dataOpen = "data"
-    }
-
+struct Team: Codable {
+    let city, name, abr: String
+    let conf: Conf
+    let div: Div
 }
 
-struct TeamData: Codable {
-    var city: String
-    var name: String
-    var abr: String
-    var conf: String
-    var div: String
-    
-    enum CodingKeys: String, CodingKey {
-        case city = "city"
-        case name = "name"
-        case abr = "abr"
-        case conf = "conf"
-        case div = "div"
-    }
-
+enum Conf: String, Codable {
+    case afc = "AFC"
+    case nfc = "NFC"
 }
 
-func ParseJSON () {
-    guard let path = Bundle.main.path(forResource: "teams", ofType: "json") else {
-        return
-    }
-    let url = URL(fileURLWithPath: path)
-    var result: TeamInfo?
-    do {
-        let jsonData = try Data(contentsOf: url)
-        result = try JSONDecoder().decode(TeamInfo.self, from: jsonData)
-        if let result = result {
-            print(result.dataOpen[1].city)
-        }
-        else {
-            print("Failed to parse")
-        }
-        return
-    }
-    catch {
-        print("Error: \(error)")
-    }
+enum Div: String, Codable {
+    case divEast = "East"
+    case east = "EAST"
+    case north = "North"
+    case south = "South"
+    case west = "West"
 }
 
+typealias Teams = [Team]
